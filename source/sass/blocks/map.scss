@@ -1,0 +1,46 @@
+.map {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 185px;
+    left: 156px;
+
+    width: 38px;
+    height: 50px;
+    background-image: url("/images/map-pin.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-width: $tablet-width) {
+      top: 215px;
+      left: 380px;
+    }
+
+    @media (min-width: $desktop-width) {
+      top: 245px;
+      left: 716px;
+    }
+  }
+}
+
+.map__image {
+  position: relative;
+
+  display: block;
+  width: 320px;
+  height: 420px;
+
+  background-color: $base-grey;
+
+  @media (min-width: $tablet-width) {
+    width: 768px;
+    height: 480px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1440px;
+    height: 540px;
+  }
+}

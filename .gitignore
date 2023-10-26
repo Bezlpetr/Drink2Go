@@ -3,3 +3,10 @@ node_modules
 build
 .idea
 .DS_Store
+.vscode
+*.ai
+*.log
+*.pdf
+*.psd
+*.sublime*
+source.zip

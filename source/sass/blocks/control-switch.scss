@@ -1,0 +1,70 @@
+.control-switch {
+  position: relative;
+
+  display: block;
+  padding-left: 52px;
+
+  cursor: pointer;
+}
+
+.control-switch__mark {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+
+  width: 42px;
+  height: 24px;
+  box-sizing: border-box;
+
+  background-color: $base-grey;
+  border: 2px solid $base-grey;
+  border-radius: 12px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+    background-color: $base-white;
+    border-radius: 50%;
+  }
+}
+
+.control-switch__label {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.control-switch:focus.control-switch__input:not(:disabled)
+  + .control-switch__mark,
+.control-switch:hover.control-switch__input:not(:disabled)
+  + .control-switch__mark {
+  border: 2px solid $base-primary;
+}
+
+.control-switch__input:checked + .control-switch__mark {
+  border: 2px solid $base-primary;
+  background-color: $base-primary;
+
+  &::after {
+    left: auto;
+    right: 0;
+  }
+}
+
+.control-switch__input:disabled + .control-switch__mark {
+  border: 2px solid $light-grey;
+  background-color: $light-grey;
+
+  &::after {
+    background-color: $lightest-grey;
+  }
+}
+
+.control-switch__input:checked:disabled + .control-switch__mark::after {
+  background-color: $base-grey;
+}

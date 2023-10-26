@@ -1,0 +1,70 @@
+.control-radio {
+  position: relative;
+
+  display: block;
+  padding-left: 34px;
+
+  cursor: pointer;
+}
+
+.control-radio__mark {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+
+  border: 2px solid $base-grey;
+  border-radius: 50%;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 2px;
+    left: 2px;
+    z-index: 2;
+
+    display: none;
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+  }
+}
+
+.control-radio__label {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.control-radio:focus .control-radio__input:not(:disabled) + .control-radio__mark,
+.control-radio:hover .control-radio__input:not(:disabled) + .control-radio__mark {
+  border: 2px solid $base-primary;
+}
+
+.control-radio__input:checked + .control-radio__mark {
+  border: 2px solid $base-primary;
+
+  &::after {
+    display: block;
+
+    background-color: $base-primary;
+  }
+}
+
+.control-radio__input:disabled + .control-radio__mark {
+  border: 2px solid $light-grey;
+}
+
+.control-radio__input:checked:disabled + .control-radio__mark::after {
+  display: block;
+
+  background-color: $light-grey;
+}
+
+.control-radio__input:disabled ~ .control-radio__label {
+  color: $base-grey;
+}

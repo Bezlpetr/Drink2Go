@@ -1,0 +1,79 @@
+.user-list {
+  padding-right: 40px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+  }
+}
+
+.user-list__item--login {
+  @media (min-width: $desktop-width) {
+    margin-right: 20px;
+  }
+}
+
+.user-list__link {
+  display: block;
+  padding: 22px;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  @media (max-width: $mobile-width-only) {
+    &:hover:not(.main-list__link--active),
+    &:active:not(.main-list__link--active) {
+      background-color: $base-secondary;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 32px 22px;
+
+    &--active {
+      color: $base-primary;
+
+      border-bottom: 2px solid $base-primary;
+    }
+
+    &:focus,
+    &:hover:not(.main-list__link--active) {
+      color: $base-primary;
+    }
+
+    &:active:not(.main-list__link--active) {
+      background-color: $base-secondary;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    padding: 32px 20px;
+  }
+}
+
+.user-list__link-text {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    margin-left: 8px;
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.24px;
+    text-transform: uppercase;
+  }
+}
+
+.user-list__login-icon,
+.user-list__cart-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+
+  object-fit: contain;
+}
